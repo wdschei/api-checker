@@ -214,7 +214,7 @@ class Validator private (private val _name : String, val startStep : Step, val c
       val cres = new CheckerServletResponse(res)
       val result = startStep.check (creq, cres, chain, 0).get
       resultHandler.handle(creq, cres, chain, result)
-      if (!result.valid) failMeter.mark()
+      //if (!result.valid) failMeter.mark()
       result
     } catch {
       case v : ValidatorException => throw v
